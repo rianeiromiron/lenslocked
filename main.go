@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_user_model
+// https://courses.calhoun.io/lessons/les_wdv2_create_user_method
 package main
 
 import (
