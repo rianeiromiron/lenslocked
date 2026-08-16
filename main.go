@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_what_is_a_hash_func
+// https://courses.calhoun.io/lessons/les_wdv2_cli_compare_func
 package main
 
 import (

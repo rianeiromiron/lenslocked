@@ -1,6 +1,6 @@
 module github.com/rianeiromiron/lenslocked
 
-go 1.24.5
+go 1.25.0
 
 require (
 	github.com/go-chi/chi/v5 v5.3.1 // indirect
@@ -12,6 +12,6 @@ require (
 	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
 	github.com/jackc/pgtype v1.14.0 // indirect
 	github.com/jackc/pgx/v4 v4.18.3 // indirect
-	golang.org/x/crypto v0.20.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/crypto v0.55.0 // indirect
+	golang.org/x/text v0.41.0 // indirect
 )
