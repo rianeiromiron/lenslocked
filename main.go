@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_cli_compare_func
+// https://courses.calhoun.io/lessons/les_wdv2_user_model
 package main
 
 import (
