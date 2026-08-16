@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_steps_for_securing_passwords
+// https://courses.calhoun.io/lessons/les_wdv2_what_is_a_hash_func
 package main
 
 import (
