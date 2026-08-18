@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_user_service_in_users_controller
+// https://courses.calhoun.io/lessons/les_wdv2_create_users_on_signup
 package main
 
 import (
