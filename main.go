@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_sign_in_view
+// https://courses.calhoun.io/lessons/les_wdv2_authenticate_users
 package main
 
 import (
