@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_authenticate_users
+// https://courses.calhoun.io/lessons/les_wdv2_process_sign_in
 package main
 
 import (
@@ -46,6 +46,7 @@ func main() {
 	usersC.Templates.SignIn = views.Must(views.ParseFS(
 		templates.FS, "signin.gohtml", "tailwind.gohtml"))
 	r.Get("/signin", usersC.SignIn)
+	r.Post("/signin", usersC.ProcessSignIn)
 	r.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Page not found", http.StatusNotFound)
 	})
