@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_create_user_method
+// https://courses.calhoun.io/lessons/les_wdv2_user_service_in_users_controller
 package main
 
 import (
@@ -7,6 +7,7 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/rianeiromiron/lenslocked/controllers"
+	"github.com/rianeiromiron/lenslocked/models"
 	"github.com/rianeiromiron/lenslocked/templates"
 	"github.com/rianeiromiron/lenslocked/views"
 )
@@ -14,13 +15,30 @@ import (
 func main() {
 	r := chi.NewRouter()
 
+	// Setup a database connection
+	cfg := models.DefaultPostgresConfig()
+	db, err := models.Open(cfg)
+	if err != nil {
+		panic(err)
+	}
+	defer db.Close()
+
+	// Setup our model services
+	userService := models.UserService{
+		DB: db,
+	}
+
+	// Setup our controllers
+	usersC := controllers.Users{
+		UserService: &userService,
+	}
 	r.Get("/", controllers.StaticHandler(views.Must(
 		views.ParseFS(templates.FS, "home.gohtml", "tailwind.gohtml"))))
 	r.Get("/contact", controllers.StaticHandler(views.Must(
 		views.ParseFS(templates.FS, "contact.gohtml", "tailwind.gohtml"))))
 	r.Get("/faq", controllers.FAQ(
 		views.Must(views.ParseFS(templates.FS, "faq.gohtml", "tailwind.gohtml"))))
-	var usersC controllers.Users
+
 	usersC.Templates.New = views.Must(views.ParseFS(
 		templates.FS, "signup.gohtml", "tailwind.gohtml"))
 	r.Get("/signup", usersC.New)
