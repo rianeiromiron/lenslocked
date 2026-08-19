@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_process_sign_in
+// https://courses.calhoun.io/lessons/les_wdv2_creating_cookies
 package main
 
 import (
