@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_creating_cookies
+// https://courses.calhoun.io/lessons/les_wdv2_cookies_with_go
 package main
 
 import (
@@ -47,6 +47,7 @@ func main() {
 		templates.FS, "signin.gohtml", "tailwind.gohtml"))
 	r.Get("/signin", usersC.SignIn)
 	r.Post("/signin", usersC.ProcessSignIn)
+	r.Get("/users/me", usersC.CurrentUser)
 	r.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Page not found", http.StatusNotFound)
 	})
