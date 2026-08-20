@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_cookies_with_go
+// hhttps://courses.calhoun.io/lessons/les_wdv2_cookies_and_xss
 package main
 
 import (
