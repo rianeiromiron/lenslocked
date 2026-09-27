@@ -1,4 +1,4 @@
-// https://courses.calhoun.io/lessons/les_wdv2_csrf_mw
+// https://courses.calhoun.io/lessons/les_wdv2_cookie_tampering    <-------------- por implementar
 package main
 
 import (
@@ -57,9 +57,7 @@ func main() {
 		[]byte(csrfKey),
 		// TODO: Fix this before deploying
 		csrf.Secure(false),
-		// Note: This is required if using v1.7.3+
-		// due to a breaking change made to fix a
-		// security issue.
+		// Add this if using gorilla/csrf v1.7.3+
 		csrf.TrustedOrigins([]string{"localhost:3000"}),
 	)
 	fmt.Println("Starting the server on :3000...")
